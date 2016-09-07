@@ -50,7 +50,7 @@ type configurationOptions struct {
 func chatMessage(message string, room *showdown.Room) {
 	parts := strings.SplitN(message, "|", 3)
 	nickname := parts[1]
-	if nickname != " xfix" && (nickname[0] == ' ' || nickname[0] == '+') {
+	if nickname != "%xfix" && (nickname[0] == ' ' || nickname[0] == '+' || nickname[0] == '%') {
 		checkBlacklist(parts[1], room)
 	} else {
 		message := parts[2]
